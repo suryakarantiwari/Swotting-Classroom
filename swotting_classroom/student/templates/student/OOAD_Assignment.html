@@ -1,0 +1,26 @@
+{% extends 'student/base.html'%}
+
+{% block body%}
+
+<div class="container mt-5">
+<nav class="navbar navbar-light bg-dark">
+  <h4 class="text-center text-white">OOAD Assignments</h4>
+</nav>
+
+    <ul class="list-group">
+        {% for i in data|slice:"0:"%}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{i.assignment_name}}
+            <form action="assignment_view" method="post">{% csrf_token %}
+           <input type = "hidden" name = "assignment_name" value = {{i.assignment_name}}>
+           <input type = "hidden" name = "file" value = {{i.file}}>
+           <input type = "hidden" name = "subject" value = "OOAD">
+          <button type="submit" class="btn btn-outline-info">View</button>
+            </form>
+        {% endfor %}
+    </li>
+    </ul>
+
+</div>
+
+{% endblock%}

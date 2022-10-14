@@ -1,0 +1,112 @@
+{% extends 'student/base.html'%}
+
+{% block body%}
+
+<div class="container mt-5 bg-light">
+    <h3 class="text-center">
+        <b>Subject Info</b>
+    </h3>
+</div>
+
+<div class="container bg-light">
+        <p>
+
+        <h2><b>
+                <p style="color:navy">&nbsp; Faculty: Mr.Dinesh Jain </p>
+            </b></h2>
+
+        <nav class="navbar navbar-light bg-light justify-content-between">
+            <h5><b>Subject Code: IT 502(c)</b></h5>
+                    <button type="button" class="btn btn-primary justify-content-center" data-toggle="modal"
+                        data-target="#syllabusmodal">Syllabus</button>
+        </nav>
+
+
+        <h3>Computer networking is the study of how computers can be linked to share data. The concept of connecting
+            computers dates back to the 1960s, when the Department of Defense led the first attempt to create a computer
+            network that painstakingly linked a handful of computers around the U.S. Since then, wireless networking has
+            taken off and networking is now considered an essential part of computing. A computer without a network,
+            arguably, has little use in daily life.
+        </h3>
+
+        </p>
+    </div>
+
+
+    <!-- syllabus  Modal -->
+    <div class="modal fade" id="syllabusmodal" tabindex="-1" role="dialog" aria-labelledby="syllabusmodal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="syllabusmodal"><b>Computer network Syllabus</b></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <b>
+                        <p>Unit I<br>
+                            Importance of computer networks, broadcast and point to point networks, Local area networks
+                            and Wide area
+                            networks , ISO-OSI reference model, TCP/IP model , interfaces and services, Protocol data
+                            unit, connection
+                            oriented and connectionless services, service primitives, Binding Protocol Address- ARP &
+                            RARP, packet
+                            format, Encapsulation
+                        </p>
+                        <p>Unit II<br>
+                            Data-Link layer: - Data link layer design issues, framing , flow & error control , physical
+                            addressing, Stop &
+                            Wait protocol ,Go back N ARQ ,selective repeat ARQ ,piggybacking and pipelining ,HDLC LAN
+                            Protocol
+                            stack-Logical link control and Media Access Control sublayer, IEEE 802.2 LLC Frame format;
+                            MAC layer
+                            Protocols- static and dynamic allocation, Pure and slotted ALOHA, Carrier sense multiple
+                            access, Persistent and
+                            non persistent CSMA, IEEE standard 802.3, 802.4, 802.5, FDDI, </p>
+                        <p>Unit III<br>
+                            The Network layer- logical addressing, classful & classless addressing, packet delivery &
+                            forwarding. unicast
+                            routing protocols , multicast routing protocols, Routing algorithm- Least Cost, Dijkstra's,
+                            Bellman-ford,
+                            Introduction to Internet protocol, IPv4 header, IPv4 Datagrams, Encapsulation, Fragmentation
+                            and Reassembly,
+                            IP routing, Subnet addressing, Subnet mask, Super netting- special case of IP addresses,
+                            Ipv6-Motivation, frame
+                            format and addressing. ICMP: Introduction, ICMP Header, ICMP message types.
+
+                        </p>
+                        <p>Unit IV<br>
+                            Transport layer- TCP: Introduction ,Transport services , Process to process delivery, TCP
+                            ,congestion control
+                            algorithms, quality of service, headers, connection establishment and termination, timeout
+                            of connection
+                            establishment, maximum segment size, port no. and socket addresses, TCP timers, UDP:
+                            Introduction, UDP
+                            header, UDP checksum, UDP operations, encapsulation & decapsulation, queuing, SCTP-Services,
+                            transmission
+                            sequence number, stream identifier, stream sequence number, packet format.
+                        </p>
+                        <p>Unit V<br>
+                            Application layer - BOOTP:-operation, packet format, DHCP:-Address allocation, configuration
+                            & packet
+                            Format, DNS: Distribution of name spaces, DNS in the internet, FTP:-Connection,
+                            Communication, command
+                            processing, TFTP, E-Mail: SMTP, POP, IMAP, SNMP. study of internetworking devices and their
+                            configuration– switches, hubs, Bridges, routers and Gateways.
+                        </p>
+                    </b>
+                </div>
+                <!-- <div class="modal-footer">
+                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a class="nav-link text-danger" href="http://127.0.0.1:8000/"><B>Log out </B><span
+                            class="sr-only">(current)</span></a> -->
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock%}

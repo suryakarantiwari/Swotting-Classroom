@@ -1,0 +1,261 @@
+{% extends 'student/base.html'%}
+
+{% block body%}
+
+
+<div class="container bg-light mt-5">
+    <h3 class="text-center mb-5">
+        <b>All The subjects you have Enrolled.</b>
+    </h3>
+    <div class="row">
+        <div class="col-md-4">
+        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+              <img src="/static/images/OS.jpg" height="150">
+              <div class="card-body">
+                <a href="#">
+                      <h5 class="mb-4 text-light"data-toggle="modal"
+                      data-target="#OSmodal">{{ student.subject1 }}</h5>
+                </a>
+                IT 501
+                <p class="card-text">RONAK JAIN</p>
+              </div>
+        </div>
+        </div>
+        <div class="col-md-4">
+        <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+          <img src="/static/images/project.jpg" height="150">
+          <div class="card-body">
+            <a href="#">
+                      <h5 class="mb-4 text-light"data-toggle="modal"
+                      data-target="#project">{{ student.subject2 }}</h5>
+            </a>
+            IT 508
+              <p class="card-text">ASIF ALI</p>
+          </div>
+        </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+                <img src="/static/images/java.jpg" height="150">
+                <div class="card-body">
+                <a href="#">
+                      <h5 class="mb-4 text-light"data-toggle="modal"
+                      data-target="#java">{{ student.subject3 }}</h5>
+                </a>
+                IT 504
+                <p class="card-text">AJAY KHATRI</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                <img src="/static/images/OOAD.jpg" height="150">
+                <div class="card-body">
+                    <a href="#">
+                        <h5 class="mb-4 text-light"data-toggle="modal"
+                              data-target="#OOAD">{{ student.subject4 }}</h5>
+                    </a>
+                    IT 503
+                <p class="card-text">KETKI TIWARI</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                  <img src="/static/images/computer.jpg" height="150">
+                    <div class="card-body">
+                    <a href="#">
+                        <h5 class="mb-4 text-light"data-toggle="modal"
+                            data-target="#CN">{{ student.subject5 }}</h5>
+                    </a>
+                    IT 502
+                    <p class="card-text">DINESH JAIN</p>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+
+            <!-- Operating sys Modal -->
+<div class="modal fade" id="OSmodal" tabindex="-1" role="dialog" aria-labelledby="OSmodal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="OSmodal">{{ student.subject1 }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+
+ <ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Subject Info
+    <a class="btn btn-dark" href="/student/OS_SubjectInfo">View</a>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Assignment
+    <a class="btn btn-dark" href="/student/os_Assignment">View</a>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Quiz
+    <a class="btn btn-dark" href="/student/OS_Quiz">View</a>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Attendance
+    <a class="btn btn-dark" href="/student/OS_Quiz">View</a>
+  </li>
+</ul>
+
+
+    </div>
+  </div>
+</div>
+
+
+                <!-- project sys Modal -->
+<div class="modal fade" id="project" tabindex="-1" role="dialog" aria-labelledby="project" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="project">{{ student.subject2 }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+
+ <ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Subject Info
+    <a class="btn btn-dark" href="/student/project_SubjectInfo">View</a>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Assignment
+    <a class="btn btn-dark" href="/student/project_Assignment">View</a>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Quiz
+    <a class="btn btn-dark" href="/student/project_Quiz">View</a>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Attendance
+    <a class="btn btn-dark" href="/student/OS_Quiz">View</a>
+  </li>
+</ul>
+
+    </div>
+  </div>
+</div>
+
+
+  <!-- java sys Modal -->
+<div class="modal fade" id="java" tabindex="-1" role="dialog" aria-labelledby="java" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="java">{{ student.subject3 }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+
+ <ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Subject Info
+    <a class="btn btn-dark" href="/student/java_SubjectInfo">View</a>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Assignment
+    <a class="btn btn-dark" href="/student/java_Assignment">View</a>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Quiz
+    <a class="btn btn-dark" href="/student/java_Quiz">View</a>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Attendance
+    <a class="btn btn-dark" href="/student/OS_Quiz">View</a>
+  </li>
+</ul>
+
+    </div>
+  </div>
+</div>
+
+<!-- OOAD sys Modal -->
+<div class="modal fade" id="OOAD" tabindex="-1" role="dialog" aria-labelledby="OOAD" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="OOAD">{{ student.subject4 }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+
+ <ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Subject Info
+    <a class="btn btn-dark" href="/student/OOAD_SubjectInfo">View</a>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Assignment
+    <a class="btn btn-dark" href="/student/OOAD_Assignment">View</a>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Quiz
+    <a class="btn btn-dark" href="/student/OOAD_Quiz">View</a>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Attendance
+    <a class="btn btn-dark" href="/student/OS_Quiz">View</a>
+  </li>
+</ul>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- CN sys Modal -->
+<div class="modal fade" id="CN" tabindex="-1" role="dialog" aria-labelledby="CN" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="CN">{{ student.subject5 }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+ <ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Subject Info
+    <a class="btn btn-dark" href="/student/CN_SubjectInfo">View</a>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Assignment
+    <a class="btn btn-dark" href="/student/CN_Assignment">View</a>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Quiz
+    <a class="btn btn-dark" href="/student/CN_Quiz">View</a>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Attendance
+    <a class="btn btn-dark" href="/student/OS_Quiz">View</a>
+  </li>     
+</ul>
+
+    </div>
+  </div>
+</div>
+{% endblock%}
+

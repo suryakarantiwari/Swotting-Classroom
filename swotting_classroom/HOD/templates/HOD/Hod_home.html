@@ -1,0 +1,335 @@
+{% extends 'HOD/base.html'%}
+
+{% block body%}
+
+    <div class="container mt-5">
+        <nav class="navbar navbar-light bg-dark">
+            <h4 class="text-center text-white"> All Admins</h4>
+            <button type="button" class="btn" data-toggle="modal" data-target="#adminmodal"> Add New Admin</button>
+        </nav>
+        <!-- admin Modal -->
+        <div class="modal fade" id="adminmodal" tabindex="-1" role="dialog" aria-labelledby="adminmodal"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="adminmodal"><b>Adding New Admin</b></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="register_admin" method="post">{% csrf_token %}
+                            <div class="form-group row">
+                                <label for="formGroupExampleInput1" class="col-sm-2 col-form-label">Full Name:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="formGroupExampleInput1" name="formGroupExampleInput1">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="formGroupExampleInput2" class="col-sm-2 col-form-label">Phone No.</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="formGroupExampleInput2" name="formGroupExampleInput2">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabel" class="col-sm-2 col-form-label">Email:</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="colFormLabel" name="colFormLabel">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Address:</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" name="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="formGroupExampleInput3" class="col-sm-2 col-form-label">Username:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="formGroupExampleInput3" name="formGroupExampleInput3">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="inputPassword1" class="col-sm-2 col-form-label">Password:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputPassword1" name="inputPassword1">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputPassword2" class="col-sm-2 col-form-label"> Confirm Password:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputPassword2" name="inputPassword2">
+                                </div>
+                            </div>
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlFile1">Profile Photo</label>
+                                    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="exampleFormControlFile1">
+                                </div>
+
+                            <div class="modal-footer">
+                                    <button type="submit" class="btn btn-dark">Save</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+    <ul class="list-group">
+        {% for i in admins|slice:"0:"%}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{i.full_name}}
+            <a class="btn btn-dark" href="">View</a>
+        {% endfor %}
+    </li>
+    </ul>
+    </div>
+
+
+    <div class="container mt-5">
+        <nav class="navbar navbar-light bg-dark">
+            <h4 class="text-center text-white"> All Teachers</h4>
+            <button type="button" class="btn" data-toggle="modal" data-target="#teachermodal"> Add New Teacher</button>
+        </nav>
+        <!-- teacher Modal -->
+        <div class="modal fade" id="teachermodal" tabindex="-1" role="dialog" aria-labelledby="teachermodal"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="teachermodal"><b>Adding New Teacher</b></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="register_teacher" method="post">{% csrf_token %}
+                            <div class="form-group row">
+                                <label for="formGroupExampleInput1" class="col-sm-2 col-form-label">Full Name:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="formGroupExampleInput1" name="formGroupExampleInput1">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="formGroupExampleInput2" class="col-sm-2 col-form-label">Phone No.</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="formGroupExampleInput2" name="formGroupExampleInput2">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabel" class="col-sm-2 col-form-label">Email:</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="colFormLabel" name="colFormLabel">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Address:</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" name="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="formGroupExampleInput" class="col-sm-2 col-form-label">Subject</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="formGroupExampleInput" name="formGroupExampleInput">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="formGroupExampleInput3" class="col-sm-2 col-form-label">Username:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="formGroupExampleInput3" name="formGroupExampleInput3" placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="inputPassword1" class="col-sm-2 col-form-label">Password:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputPassword1" name="inputPassword1">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputPassword2" class="col-sm-2 col-form-label"> Confirm
+                                    Password:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputPassword2" name="inputPassword2">
+                                </div>
+                            </div>
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlFile1">Profile Photo</label>
+                                    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="exampleFormControlFile1">
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-dark">Save</button>
+                                </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+    <ul class="list-group">
+        {% for i in teacher|slice:"0:"%}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{i.full_name}}
+            <a class="btn btn-dark" href="">View</a>
+        {% endfor %}
+    </li>
+    </ul>
+    </div>
+
+    <div class="container mt-5">
+        <nav class="navbar navbar-light bg-dark">
+            <h4 class="text-center text-white"> All Students</h4>
+            <button type="button" class="btn" data-toggle="modal" data-target="#studentmodal"> Add New
+                Student</button>
+        </nav>
+
+        <!-- student Modal -->
+        <div class="modal fade" id="studentmodal" tabindex="-1" role="dialog" aria-labelledby="studentmodal"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="studentmodal"><b>Adding New Student</b></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="register_student" method="post">{% csrf_token %}
+                            <div class="form-group row">
+                                <label for="formGroupExampleInput1" class="col-sm-2 col-form-label">Full Name:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="formGroupExampleInput1" name="formGroupExampleInput1">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="colFormLabel" class="col-sm-2 col-form-label">Email:</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="colFormLabel" name="colFormLabel">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="formGroupExampleInput2" class="col-sm-2 col-form-label">Phone No.</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="formGroupExampleInput2" name="formGroupExampleInput2">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="formGroupExampleInput3" class="col-sm-2 col-form-label"> Parent PhNo.</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="formGroupExampleInput3" name="formGroupExampleInput3">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Address:</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="exampleFormControlTextarea1"></textarea>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="formGroupExampleInput4" class="col-sm-2 col-form-label">Username:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="formGroupExampleInput4" name="formGroupExampleInput4">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="inputPassword1" class="col-sm-2 col-form-label">Password:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputPassword1" name="inputPassword1">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputPassword2" class="col-sm-2 col-form-label"> Confirm
+                                    Password:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputPassword2" name="inputPassword2">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="formGroupExampleInput5" class="col-sm-2 col-form-label">Year:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="formGroupExampleInput5" name="formGroupExampleInput5">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="formGroupExampleInput6" class="col-sm-2 col-form-label">Section:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="formGroupExampleInput6" name="formGroupExampleInput6">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="formGroupExampleInput7" class="col-sm-2 col-form-label">Semester:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="formGroupExampleInput7" name="formGroupExampleInput7">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="formGroupExampleInput8" class="col-sm-2 col-form-label">Subject1:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="formGroupExampleInput8" name="formGroupExampleInput8">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="formGroupExampleInput9" class="col-sm-2 col-form-label">Subject2:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="formGroupExampleInput9" name="formGroupExampleInput9">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="formGroupExampleInput10" class="col-sm-2 col-form-label">Subject3:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="formGroupExampleInput10" name="formGroupExampleInput10">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="formGroupExampleInput11" class="col-sm-2 col-form-label">Subject4:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="formGroupExampleInput11" name="formGroupExampleInput11">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="formGroupExampleInput12" class="col-sm-2 col-form-label">Subject5:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="formGroupExampleInput12" name="formGroupExampleInput12">
+                                </div>
+                            </div>
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlFile1">Profile Photo</label>
+                                    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="exampleFormControlFile1">
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-dark">Save</button>
+                                </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        <div class="container">
+        <ul class="list-group">
+        {% for i in student|slice:"0:"%}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{i.full_name}}
+            <a class="btn btn-dark" href="">View</a>
+        {% endfor %}
+        </li>
+        </ul>
+        </div>
+
+
+{% endblock%}

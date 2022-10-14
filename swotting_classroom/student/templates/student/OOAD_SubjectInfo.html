@@ -1,0 +1,97 @@
+{% extends 'student/base.html'%}
+
+{% block body%}
+
+<div class="container mt-5 bg-light">
+    <h3 class="text-center">
+        <b>Subject Info</b>
+    </h3>
+</div>
+
+
+<div class="container bg-light">
+        <p>
+
+        <h2><b>
+                <p style="color:navy">&nbsp; Faculty: Mrs.Ketki Tiwari </p>
+            </b></h2>
+       <nav class="navbar navbar-light bg-light justify-content-between">
+            <h5><b>Subject Code: IT 503</b></h5>
+                    <button type="button" class="btn btn-primary justify-content-center" data-toggle="modal"
+                        data-target="#syllabusmodal">Syllabus</button>
+        </nav>
+
+
+        <h3>Object-oriented analysis and design (OOAD) is a technical approach for analyzing and designing an
+            application, system, or business by applying object-oriented programming, as well as using visual modeling
+            throughout the software development process to guide stakeholder communication and product quality.
+            OOAD in modern software engineering is typically conducted in an iterative and incremental way. The outputs
+            of OOAD activities are analysis models (for OOA) and design models (for OOD) respectively. The intention is
+            for these to be continuously refined and evolved, driven by key factors like risks and business value.
+
+        </h3>
+
+        </p>
+    </div>
+
+
+    <!-- syllabus  Modal -->
+    <div class="modal fade" id="syllabusmodal" tabindex="-1" role="dialog" aria-labelledby="syllabusmodal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="syllabusmodal"><b>Object Oriented Analysis Design Syllabus</b></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <b>
+                        <p>Unit I<br>
+                            Introduction: Overview of object oriented concepts, Object Orientation, OO Software
+                            Development life
+                            cycle, Object oriented methodology, OO Themes, Modeling Concepts, Role of Analysis and
+                            Design in software
+                            development, Overview of various OOAD methodologies, OO approach vs conventional approach,
+                            Unified
+                            process of Software development, UML, Goals of UML, Overview of different models.
+                        </p>
+                        <p>Unit II<br>
+                            Static Modeling using Class Diagrams: Object and Class concepts, Link and association,
+                            Multiplicity,
+                            Ternary Association, Recursive association, Association class, Generalization and
+                            Inheritance, Multiple
+                            inheritance, Aggregation and composition, Abstract Class, Packages.</p>
+                        <p>Unit III<br>
+                            Dynamic Modeling using State Diagrams: Events, States, Transitions and conditions, Types of
+                            state
+                            diagrams, Continuous life cycle state diagrams, one-shot life cycle state diagrams, Sub
+                            states, Nested state
+                            diagrams, Signal generalization, Concurrency, Junction state, Synch state, Relation of class
+                            and state models.
+                        </p>
+                        <p>Unit IV<br>
+                            Interaction Modeling: Use case Models, Actors and use cases, Use Case relationships, Use of Use
+                            cases for validation and verification, Sequence diagrams, Procedural sequence models, activity models, swim
+                            lanes, Dynamic concurrency, decomposing an activity, Communication Diagrams, Architectural Modeling:
+                            Component and Deployment Diagrams.
+                            </p>
+                        <p>Unit V<br>
+                            System design and class design, Implementation modeling, Implementing structure and implementing
+                            functionality, Frameworks, Design Patterns, Object-Oriented Languages and their comparison, Object-Oriented
+                            Databases, ObjectOriented Programming Style, CORBA, COM, DCOM.
+                        </p>
+                    </b>
+                </div>
+                <!-- <div class="modal-footer">
+                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a class="nav-link text-danger" href="http://127.0.0.1:8000/"><B>Log out </B><span
+                            class="sr-only">(current)</span></a> -->
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+
+    </div>
+{% endblock%}
